@@ -26,6 +26,7 @@ const Name_desc = dynamic(() => import("./name-desc"), { ssr: false });
 const Amenities = dynamic(() => import("./amenities"), { ssr: false });
 const SizeForm = dynamic(() => import("./size"));
 const FinalForm = dynamic(() => import("./finalForm"), { ssr: false });
+
 const LandSizeForm = dynamic(() =>
   import("./size").then((module) => ({ default: module.LandSizeForm }), {
     ssr: false,
@@ -34,8 +35,8 @@ const LandSizeForm = dynamic(() =>
 const SuccesDialoag = dynamic(() => import("./successDialog"), {
   ssr: false,
 });
-const SelectionComp = withGenericSelection(GenericSelection);
 
+const SelectionComp = withGenericSelection(GenericSelection);
 const Forms = ({ lng, user }) => {
   const { setValue, handleSubmit, watch } = useForm();
   const [currentStep, setCurrentStep] = useState(1);
